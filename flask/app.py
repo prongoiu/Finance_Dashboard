@@ -11,6 +11,6 @@ def home():
 
 @app.route("/api/<name>", methods=['GET'])
 def api(name:str):
-    ticker = yf.Ticker("name")
+    ticker = yf.Ticker(name.upper())
     return jsonify(ticker.info)
 
